@@ -22,7 +22,7 @@ class FirstViewController: UIViewController, CanReceive {
         // Do any additional setup after loading the view, typically from a nib.
         
         // this data will be passed from the SecondViewController via a Delegate callback
-        label.text = dataPassedBack
+        //label.text = dataPassedBack
         textField.placeholder = "shalowam to the 12 tribes world-wide"
 
     }
@@ -30,6 +30,10 @@ class FirstViewController: UIViewController, CanReceive {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func changeToBlue(_ sender: Any) {
+        view.backgroundColor = UIColor.blue
     }
 
     @IBAction func sendButtonPressed(_ sender: Any) {
@@ -53,9 +57,8 @@ class FirstViewController: UIViewController, CanReceive {
             // register to recieve data passed back from second view controller
             secondVC.delegate = self
             
+            // send data forwards to the Second View Controller
             secondVC.data = textField.text!
-
-            
         }
      }
  
