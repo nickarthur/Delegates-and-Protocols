@@ -10,10 +10,6 @@ import UIKit
 
 class FirstViewController: UIViewController, CanReceive {
 
-    
-    
-    var dataPassedBack = ""
-    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
@@ -40,7 +36,6 @@ class FirstViewController: UIViewController, CanReceive {
         performSegue(withIdentifier: "sendDataForwards", sender: self)
     }
     
-    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -65,8 +60,8 @@ class FirstViewController: UIViewController, CanReceive {
     //MARK: Conform to CanReceive Delegate Protocal
     
     func dataReceived(data: String) {
-        dataPassedBack = data
-        label.text = dataPassedBack
+        // update our label to the data sent from SecondViewController
+        label.text = data
     }
     
 }

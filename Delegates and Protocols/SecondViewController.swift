@@ -29,10 +29,11 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+  
+        textField.placeholder = "enter shum shiznit ma nigga"
+
         // display any data that may have been passed from the first view controller
         label.text = data
-        textField.placeholder = "enter shum shiznit ma nigga"
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +42,10 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
+        
+        
         // pass our text field's data  back to first view controller that registered as a CanReceive delegate
+        // using optional chainingcl
         delegate?.dataReceived(data: textField.text!)
         
         // and dismiss ourself
