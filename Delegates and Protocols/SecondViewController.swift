@@ -8,7 +8,19 @@
 
 import UIKit
 
+// to enable the second view controller to pass data back
+protocol CanReceive {
+    
+    func dataReceived(data: String)
+    
+}
+
 class SecondViewController: UIViewController {
+  
+    var delegate : CanReceive?
+
+    // this property will be set by the FirstViewController
+    var data = ""
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -17,6 +29,10 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // display any data that may have been passed from the first view controller
+        label.text = data
+        textField.placeholder = "enter shum shiznit ma nigga"
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +41,11 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
+        // pass our text field's data  back to first view controller that registered as a CanReceive delegate
+        delegate?.dataReceived(data: textField.text!)
         
+        // and dismiss ourself
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
