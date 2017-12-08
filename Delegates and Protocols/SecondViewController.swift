@@ -47,6 +47,7 @@ class SecondViewController: UIViewController {
         // pass our text field's data  back to first view controller that registered as a CanReceive delegate
         // using optional chainingcl
         delegate?.dataReceived(data: textField.text!)
+        textField.text=""
         
         // and dismiss ourself
         self.dismiss(animated: true, completion: nil)

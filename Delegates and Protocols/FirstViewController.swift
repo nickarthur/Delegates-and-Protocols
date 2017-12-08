@@ -54,6 +54,8 @@ class FirstViewController: UIViewController, CanReceive {
             
             // send data forwards to the Second View Controller
             secondVC.data = textField.text!
+            textField.text=""
+
         }
      }
  
