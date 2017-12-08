@@ -9,7 +9,10 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +24,10 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func sendButtonPressed(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

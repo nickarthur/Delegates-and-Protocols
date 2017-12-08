@@ -46,6 +46,9 @@
                                 <state key="normal" title="Beam me up Scotty !">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXC-Pe-dhU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +66,9 @@
                         <viewLayoutGuide key="safeArea" id="e3q-WY-VNG"/>
                     </view>
                     <connections>
-                        <segue destination="vid-35-bX2" kind="show" identifier="toSecondScreen" id="TNL-9h-ftc"/>
+                        <outlet property="label" destination="GOC-wt-FHe" id="r93-An-vPf"/>
+                        <outlet property="textField" destination="sKM-sX-1gf" id="HeP-vi-Nc3"/>
+                        <segue destination="vid-35-bX2" kind="show" identifier="sendDataForwards" id="TNL-9h-ftc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,6 +105,9 @@
                                 <state key="normal" title="Pass it back">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="vid-35-bX2" eventType="touchUpInside" id="tcV-dI-K18"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +124,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mvj-Wz-tE6"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="CXF-Km-a0J" id="NsR-ba-x5B"/>
+                        <outlet property="textField" destination="zcG-T3-Fl1" id="E0m-bJ-488"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-UM-T35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
